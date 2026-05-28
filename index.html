@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duplicate Question Pair Detection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-brand">DupliQ</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#predict">Predict</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#tech">Tech Stack</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#predict" class="nav-btn">Get Started</a>
+        <button class="mobile-toggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Same Vibe, Different Text</h1>
+            <p class="hero-subtitle">An AI-powered system that detects semantic similarity between two questions using NLP, Machine Learning, and Deep Learning.</p>
+            <a href="#predict" class="btn-primary">Start Predicting</a>
+        </div>
+    </section>
+
+    <!-- Prediction Section -->
+    <section id="predict" class="predict-section">
+        <div class="container">
+            <h2 class="section-title">Predict Similarity</h2>
+            <div class="predict-card">
+                <div class="inputs-row">
+                    <div class="input-block">
+                        <label for="q1">Question 1</label>
+                        <textarea id="q1" placeholder="Enter first question..." rows="4"></textarea>
+                    </div>
+                    <div class="input-block">
+                        <label for="q2">Question 2</label>
+                        <textarea id="q2" placeholder="Enter second question..." rows="4"></textarea>
+                    </div>
+                </div>
+                <button id="predictBtn" class="btn-primary predict-btn">
+                    <span class="btn-text">Predict Similarity</span>
+                    <span class="btn-loader hidden">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10" stroke-dasharray="31.4" stroke-dashoffset="10">
+                                <animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/>
+                            </circle>
+                        </svg>
+                    </span>
+                </button>
+                <div id="result" class="result-area hidden">
+                    <div class="result-badge" id="resultBadge">—</div>
+                    <div class="result-details">
+                        <div class="result-row">
+                            <span class="result-label">is_duplicate:</span>
+                            <span class="result-value" id="resultDuplicate">—</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">Confidence Score:</span>
+                            <span class="result-value" id="resultScore">—</span>
+                        </div>
+                        <div class="result-row">
+                            <span class="result-label">Label:</span>
+                            <span class="result-value" id="resultLabel">—</span>
+                        </div>
+                    </div>
+                    <p class="result-message" id="resultMessage"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About The Project</h2>
+            <div class="about-grid">
+                <div class="about-card fade-in">
+                    <div class="about-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h3>Semantic Similarity</h3>
+                    <p>Understands the meaning behind questions, not just surface-level word matching, to identify truly duplicate pairs.</p>
+                </div>
+                <div class="about-card fade-in">
+                    <div class="about-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z"/><path d="M9 9h6M9 12h4M9 15h5"/></svg>
+                    </div>
+                    <h3>NLP Preprocessing</h3>
+                    <p>Advanced text preprocessing with tokenization, stemming, and stopword removal to extract meaningful features.</p>
+                </div>
+                <div class="about-card fade-in">
+                    <div class="about-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                    </div>
+                    <h3>ML Intelligence</h3>
+                    <p>Combines traditional ML algorithms with deep learning architectures for highly accurate duplicate detection.</p>
+                </div>
+                <div class="about-card fade-in">
+                    <div class="about-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    </div>
+                    <h3>Scalable Deployment</h3>
+                    <p>Containerized with Docker and deployed on AWS for production-grade performance and reliability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="tech" class="tech-section">
+        <div class="container">
+            <h2 class="section-title">Tech Stack</h2>
+            <div class="tech-capsules">
+                <div class="capsule"><span class="capsule-icon">🐍</span> Python</div>
+                <div class="capsule"><span class="capsule-icon">📝</span> NLP</div>
+                <div class="capsule"><span class="capsule-icon">🤖</span> Machine Learning</div>
+                <div class="capsule"><span class="capsule-icon">📊</span> TF-IDF</div>
+                <div class="capsule"><span class="capsule-icon">🎒</span> Bag Of Words</div>
+                <div class="capsule"><span class="capsule-icon">📐</span> Word2Vec</div>
+                <div class="capsule"><span class="capsule-icon">🧠</span> Deep Learning</div>
+                <div class="capsule"><span class="capsule-icon">⚡</span> FastAPI</div>
+                <div class="capsule"><span class="capsule-icon">🐳</span> Docker</div>
+                <div class="capsule"><span class="capsule-icon">📦</span> Docker Hub</div>
+                <div class="capsule"><span class="capsule-icon">☁️</span> AWS</div>
+                <div class="capsule"><span class="capsule-icon">🌐</span> HTML</div>
+                <div class="capsule"><span class="capsule-icon">🎨</span> CSS</div>
+                <div class="capsule"><span class="capsule-icon">⚙️</span> JavaScript</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-links">
+                <a href="mailto:asifkhan82609@gmail.com" class="contact-item">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+                    <span>asifkhan82609@gmail.com</span>
+                </a>
+                <a href="https://www.linkedin.com/in/asifkhan001/" target="_blank" class="contact-item">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    <span>LinkedIn — Asif Khan</span>
+                </a>
+                <a href="https://github.com/AsifKhan-001" target="_blank" class="contact-item">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                    <span>GitHub — AsifKhan-001</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p>&copy; 2026 All Rights Reserved</p>
+            <p class="footer-credit">Designed &amp; Built by Asif Khan</p>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/asifkhan001/" target="_blank" aria-label="LinkedIn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a href="https://github.com/AsifKhan-001" target="_blank" aria-label="GitHub">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
