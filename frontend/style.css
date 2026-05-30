@@ -3,6 +3,7 @@
     src: url('font.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 * {
@@ -28,6 +29,7 @@ html {
 }
 
 body {
+    /* Kept strictly as standard system fonts for clean secondary text, buttons, and capsules */
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     color: var(--text);
     background: var(--bg);
@@ -60,7 +62,7 @@ body {
 }
 
 .nav-brand {
-    font-family: 'CustomDisplay', sans-serif;
+    font-family: 'CustomDisplay', sans-serif; /* Applied here */
     font-size: 1.3rem;
     font-weight: 600;
     color: var(--text);
@@ -168,7 +170,7 @@ body {
 }
 
 .hero-title {
-    font-family: 'CustomDisplay', sans-serif;
+    font-family: 'CustomDisplay', sans-serif; /* Applied here */
     font-size: clamp(2.8rem, 6vw, 4.2rem);
     font-weight: 400;
     letter-spacing: -1px;
@@ -212,7 +214,7 @@ body {
 }
 
 .section-title {
-    font-family: 'CustomDisplay', sans-serif;
+    font-family: 'CustomDisplay', sans-serif; /* Applied here */
     font-size: clamp(1.8rem, 4vw, 2.4rem);
     font-weight: 400;
     text-align: center;
@@ -397,6 +399,7 @@ body {
 }
 
 .about-card h3 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Kept standard for descriptive headers */
     font-size: 1.05rem;
     font-weight: 600;
     margin-bottom: 8px;
@@ -492,7 +495,7 @@ body {
 
 /* ========== FOOTER ========== */
 .footer {
-    padding: 40px 24px;
+    padding: 30px 24px;
     background: var(--white);
     border-top: 1px solid #eef0f3;
 }
